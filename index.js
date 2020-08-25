@@ -29,9 +29,11 @@ app.get("/busca", async (req, res) => {
 
     $(".instant").each((index, element) => {
       const title = $(element).text();
-      const link = $(element).children(".small-button").attr("onmousedown");
-      const [, linked] = link.split(`play('`);
-      const [finalink] = linked.split(`')`);
+      const attr_splited = $(element)
+        .children(".small-button")
+        .attr("onmousedown");
+      const [, split_first] = attr_splited.split(`play('`);
+      const [link] = split_first.split(`')`);
 
       const item = {
         title,
