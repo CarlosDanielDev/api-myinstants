@@ -32,18 +32,19 @@ app.get("/busca", async (req, res) => {
       const attr_splited = $(element)
         .children(".small-button")
         .attr("onmousedown");
-      const [, split_first] = attr_splited.split(`play('`);
-      const [link] = split_first.split(`')`);
+      const [, splited_first] = attr_splited.split(`play('`);
+      const [link] = splited_first.split(`')`);
 
       const item = {
         title,
-        link: `${URL}${finalink}`,
+        link: `${URL}${link}`,
       };
 
       array[index] = item;
     });
     return res.status(200).json(array);
   } catch (error) {
+    console.log(error);
     return res.status(404).json({ error });
   }
 });
