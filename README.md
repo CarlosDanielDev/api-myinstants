@@ -9,7 +9,7 @@ node index.js
 ## Rota de Busca
 
 ```bash
-GET http://localhost:3333/busca?name=titlo_da_busca
+GET http://localhost:3333/busca?name=titulo_da_busca
 ```
 
 ## Libs
